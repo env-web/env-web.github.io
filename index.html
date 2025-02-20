@@ -9,11 +9,37 @@
     <script src="effects.js" defer></script>
 </head>
 <body>
+    <a href="https://bsky.app/profile/ratnoises.bsky.social" target="_blank" class="credit">made and designed by RAT &lt;3</a>
     <div class="container">
         <header class="hero">
             <h1 class="main-title">Welcome to <span class="highlight" data-text="Envision Ltd.">Envision Ltd.</span></h1>
             <p class="subtitle animate-slide-up">Transform your ideas into reality</p>
+            <button class="scroll-button" onclick="toggleEmployees()">View Our Team</button>
         </header>
+        <div class="employees-section" id="employees">
+            <button class="close-button" onclick="toggleEmployees()">×</button>
+            <h2 class="section-title">Our Team</h2>
+            <div class="employee-grid">
+                <div class="employee-card">
+                    <div class="employee-image">
+                        <img src="images/marla.jpg" alt="Marla - CEO">
+                    </div>
+                    <div class="employee-info">
+                        <h3>Marla</h3>
+                        <p>Chief Executive Officer</p>
+                    </div>
+                </div>
+                <div class="employee-card">
+                    <div class="employee-image">
+                        <img src="images/rat.jpg" alt="RAT - CTO">
+                    </div>
+                    <div class="employee-info">
+                        <h3>RAT</h3>
+                        <p>Chief Technology Officer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

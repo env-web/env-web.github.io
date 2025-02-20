@@ -3,7 +3,25 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+.credit {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 0.8rem;
+    opacity: 0.2;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Poppins', sans-serif;
+    z-index: 10;
+    text-shadow: 0 0 10px rgba(255, 92, 157, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+.credit:hover {
+    opacity: 0.5;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 0 15px rgba(255, 92, 157, 0.5);
+}
 body {
     font-family: 'Poppins', Arial, sans-serif;
     line-height: 1.6;
@@ -17,7 +35,6 @@ body {
     overflow: hidden;
     position: relative;
 }
-
 .container {
     width: 90%;
     max-width: 900px;
@@ -31,7 +48,6 @@ body {
         0 0 50px rgba(255, 92, 157, 0.1),
         inset 0 0 20px rgba(255, 92, 157, 0.05);
 }
-
 canvas {
     position: fixed !important;
     top: 0 !important;
@@ -39,7 +55,6 @@ canvas {
     z-index: 1 !important;
     pointer-events: none !important;
 }
-
 .background-effects {
     position: fixed;
     top: 0;
@@ -348,7 +363,104 @@ html {
 .container {
     position: relative;
     overflow: hidden;
-    background: rgba(20, 20, 20, 0.95);
-    backdrop-filter: blur(10px);
+    .employees-section {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        max-width: 700px;
+        max-height: 70vh;
+        background: rgba(20, 20, 20, 0.95);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-radius: 20px;
+        border: 1px solid rgba(255, 92, 157, 0.15);
+        box-shadow: 0 0 50px rgba(255, 92, 157, 0.1);
+        padding: 2rem;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s ease;
+        z-index: 3;
+        pointer-events: none;
+    }
+    .employees-section.active {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: all;
+    }
+    .employee-grid {
+        max-height: calc(80vh - 120px);
+        overflow-y: auto;
+        padding-right: 10px;
+    }
+    .employee-grid::-webkit-scrollbar {
+        width: 8px;
+    }
+    .employee-grid::-webkit-scrollbar-track {
+        background: rgba(255, 92, 157, 0.1);
+        border-radius: 4px;
+    }
+    .employee-grid::-webkit-scrollbar-thumb {
+        background: rgba(255, 92, 157, 0.3);
+        border-radius: 4px;
+    }
+    .employee-card {
+        display: flex;
+        align-items: center;
+        padding: 1.2rem;
+        margin-bottom: 0.8rem;
+        gap: 1rem;
+        justify-content: space-between;
+        background: rgba(30, 30, 30, 0.5);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 92, 157, 0.15);
+        transition: all 0.3s ease;
+    }
+    .employee-info {
+        text-align: left;
+        flex: 1;
+        padding-left: 1.5rem;
+    }
+    .employee-image {
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 92, 157, 0.15);
+    }
+    .close-button {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 32px;
+        height: 32px;
+        background: rgba(255, 92, 157, 0.1);
+        border: 1px solid rgba(255, 92, 157, 0.2);
+        border-radius: 50%;
+        color: #ff5c9d;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .close-button:hover {
+        background: rgba(255, 92, 157, 0.2);
+        transform: scale(1.1);
+    }
+    .employee-card {
+        padding: 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+    .employee-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .employee-card p {
+        font-size: 1rem;
+        opacity: 0.9;
+    }
     box-shadow: 0 0 50px rgba(255, 92, 157, 0.1);
 }
